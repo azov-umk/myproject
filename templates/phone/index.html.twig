@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ListController!{% endblock %}
+
+{% block body %}
+    <style>
+        .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+        .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+    </style>
+    <div class="example-wrapper">
+        <div>
+            {{ form_start(form) }}
+            {{ form_widget(form) }}
+            <button type="submit">Отправить</button>
+            {{ form_end(form) }}
+        </div>
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">id</th>
+                <th scope="col">phone1</th>
+                <th scope="col">phone2</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for phone in phones %}
+                <tr>
+                    <th scope="row">{{ phone.id }}</th>
+                    <td>{{ phone.phone1 }}</td>
+                    <td>{{ phone.phone2 }}</td>
+                    <td><a href="{{ path('remove_phone', {'phone': phone.id}) }}" class="btn btn-primary"></a>Удалить</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+{% endblock %}
