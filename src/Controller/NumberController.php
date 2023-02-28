@@ -12,7 +12,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class NumberController extends AbstractController
 {
-    #[Route('/number', name: 'app_number')]
+    #[Route('/api/v1/number', name: 'app_number')]
     public function index(Request $request, ManagerRegistry $doctrine): Response
     {
 //        $user_number = $doctrine->getRepository(User::class)->find(1);
@@ -49,12 +49,12 @@ class NumberController extends AbstractController
             'num' => $num
         ]);
     }
-    #[Route('/remove/{number}', name: 'remove_number')]
-    public function removeNumber(Number $number, Request $request, ManagerRegistry $doctrine)
-    {
-        $entityManager = $doctrine->getManager();
-        $entityManager->remove($number);
-        $entityManager->flush();
-        return $this->redirectToRoute('app_number');
-    }
+//    #[Route('/remove/{number}', name: 'remove_number')]
+//    public function removeNumber(Number $number, Request $request, ManagerRegistry $doctrine)
+//    {
+//        $entityManager = $doctrine->getManager();
+//        $entityManager->remove($number);
+//        $entityManager->flush();
+//        return $this->redirectToRoute('app_number');
+//    }
 }
