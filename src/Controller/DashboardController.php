@@ -11,7 +11,7 @@ use Symfony\Component\Security\Http\Attribute\CurrentUser;
 
 class DashboardController extends AbstractController
 {
-    #[Route(path: "/api/v1/user/me", methods: ["GET"])]
+    #[Route(path: "/api/dashboard", methods: ["GET"])]
     public function me(#[CurrentUser] UserInterface $user): Response
     {
         return $this->json($user);

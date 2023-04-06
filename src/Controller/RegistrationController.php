@@ -51,7 +51,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class RegistrationController extends AbstractController
 {
-    #[Route(path: '/api/v1/register', name: 'register', methods: ['POST'])]
+    #[Route(path: '/api/register', name: 'register', methods: ['POST'])]
     public function index(ManagerRegistry $doctrine, Request $request, UserPasswordHasherInterface $passwordHasher): Response
     {
         $em = $doctrine->getManager();

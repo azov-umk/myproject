@@ -12,7 +12,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class NumberController extends AbstractController
 {
-    #[Route('/api/v1/number', name: 'app_number')]
+    #[Route('/api/number', name: 'app_number')]
     public function index(Request $request, ManagerRegistry $doctrine): Response
     {
 //        $user_number = $doctrine->getRepository(User::class)->find(1);
